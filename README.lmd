@@ -1,0 +1,90 @@
+# react-native-vector-icons npm start bug
+
+Running `pod update` yields
+
+```
+$ pod update
+Update all pods
+Updating local specs repositories
+Analyzing dependencies
+Fetching podspec for `RNVectorIcons` from `../node_modules/react-native-vector-icons`
+Downloading dependencies
+Installing RNVectorIcons (0.8.4)
+Installing React (0.11.0)
+Generating Pods project
+Integrating client project
+Sending stats
+Pod installation complete! There is 1 dependency from the Podfile and 2 total
+pods installed.
+
+[!] The `ReactNativeVectorIconsBug [Debug]` target overrides the `OTHER_LDFLAGS` build setting defined in `Pods/Target Support Files/Pods-ReactNativeVectorIconsBug/Pods-ReactNativeVectorIconsBug.debug.xcconfig'. This can lead to problems with the CocoaPods installation
+    - Use the `$(inherited)` flag, or
+    - Remove the build settings from the target.
+
+[!] The `ReactNativeVectorIconsBug [Release]` target overrides the `OTHER_LDFLAGS` build setting defined in `Pods/Target Support Files/Pods-ReactNativeVectorIconsBug/Pods-ReactNativeVectorIconsBug.release.xcconfig'. This can lead to problems with the CocoaPods installation
+    - Use the `$(inherited)` flag, or
+    - Remove the build settings from the target.
+```
+
+Running `npm start` yeilds
+
+```
+$ npm start
+
+> ReactNativeVectorIconsBug@0.0.1 start /Users/jcressman/Documents/Code/ReactNativeVectorIconsBug
+> react-native start
+
+ ┌────────────────────────────────────────────────────────────────────────────┐
+ │  Running packager on port 8081.                                            │
+ │                                                                            │
+ │  Keep this packager running while developing on any JS projects. Feel      │
+ │  free to close this tab and run your own packager instance if you          │
+ │  prefer.                                                                   │
+ │                                                                            │
+ │  https://github.com/facebook/react-native                                  │
+ │                                                                            │
+ └────────────────────────────────────────────────────────────────────────────┘
+Looking for JS files in
+   /Users/jcressman/Documents/Code/ReactNativeVectorIconsBug
+
+[11:24:31 AM] <START> Building Dependency Graph
+[11:24:31 AM] <START> Crawling File System
+[11:24:31 AM] <START> Loading bundles layout
+[11:24:31 AM] <END>   Loading bundles layout (0ms)
+
+React packager ready.
+
+[11:24:32 AM] <END>   Crawling File System (1765ms)
+[11:24:32 AM] <START> Building in-memory fs for JavaScript
+[11:24:34 AM] <END>   Building in-memory fs for JavaScript (1292ms)
+[11:24:34 AM] <START> Building Haste Map
+Error building DepdendencyGraph:
+ Error: Naming collision detected: /Users/jcressman/Documents/Code/ReactNativeVectorIconsBug/node_modules/react-native/node_modules/react-tools/src/shared/vendor/core/dom/isTextNode.js collides with /Users/jcressman/Documents/Code/ReactNativeVectorIconsBug/ios/Pods/React/node_modules/react-tools/src/shared/vendor/core/dom/isTextNode.js
+    at HasteMap._updateHasteMap (/Users/jcressman/Documents/Code/ReactNativeVectorIconsBug/node_modules/react-native/packager/react-packager/src/DependencyResolver/DependencyGraph/HasteMap.js:123:13)
+    at /Users/jcressman/Documents/Code/ReactNativeVectorIconsBug/node_modules/react-native/packager/react-packager/src/DependencyResolver/DependencyGraph/HasteMap.js:95:28
+    at tryCallOne (/Users/jcressman/Documents/Code/ReactNativeVectorIconsBug/node_modules/react-native/node_modules/promise/lib/core.js:37:12)
+    at /Users/jcressman/Documents/Code/ReactNativeVectorIconsBug/node_modules/react-native/node_modules/promise/lib/core.js:103:15
+    at flush (/Users/jcressman/Documents/Code/ReactNativeVectorIconsBug/node_modules/react-native/node_modules/promise/node_modules/asap/raw.js:50:29)
+    at doNTCallback0 (node.js:428:9)
+    at process._tickCallback (node.js:357:13)
+
+npm ERR! Darwin 15.0.0
+npm ERR! argv "/Users/jcressman/.nvm/versions/node/v5.0.0/bin/node" "/Users/jcressman/.nvm/versions/node/v5.0.0/bin/npm" "start"
+npm ERR! node v5.0.0
+npm ERR! npm  v2.14.12
+npm ERR! code ELIFECYCLE
+npm ERR! ReactNativeVectorIconsBug@0.0.1 start: `react-native start`
+npm ERR! Exit status 1
+npm ERR!
+npm ERR! Failed at the ReactNativeVectorIconsBug@0.0.1 start script 'react-native start'.
+npm ERR! This is most likely a problem with the ReactNativeVectorIconsBug package,
+npm ERR! not with npm itself.
+npm ERR! Tell the author that this fails on your system:
+npm ERR!     react-native start
+npm ERR! You can get their info via:
+npm ERR!     npm owner ls ReactNativeVectorIconsBug
+npm ERR! There is likely additional logging output above.
+
+npm ERR! Please include the following file with any support request:
+npm ERR!     /Users/jcressman/Documents/Code/ReactNativeVectorIconsBug/npm-debug.log
+```

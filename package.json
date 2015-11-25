@@ -1,0 +1,12 @@
+{
+  "name": "ReactNativeVectorIconsBug",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "react-native start"
+  },
+  "dependencies": {
+    "react-native": "^0.14.2",
+    "react-native-vector-icons": "^0.8.5"
+  }
+}

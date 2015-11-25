@@ -1,0 +1,3 @@
+rootProject.name = 'ReactNativeVectorIconsBug'
+
+include ':app'
